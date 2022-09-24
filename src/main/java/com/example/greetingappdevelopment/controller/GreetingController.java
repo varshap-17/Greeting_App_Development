@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
@@ -53,9 +54,15 @@ public class GreetingController {
     public String byid(@PathVariable Integer id){
         return greetingService.getData(id);
     }
+    //uc6
+    @GetMapping("/getlist")
+    public List<Greeting> getAll(){
+        return greetingService.getAllData();
+    }
     //uc7
     @PutMapping("/edit/{id}")
     public Greeting editbyid(@PathVariable Integer id,@RequestParam String content){
         return greetingService.editdata(editbyid(id,content));
     }
+
 }
