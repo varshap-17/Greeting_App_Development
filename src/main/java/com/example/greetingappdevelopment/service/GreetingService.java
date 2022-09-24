@@ -24,4 +24,10 @@ public class GreetingService {
     public String saveMessage(User user){
         return "Hello"+user.getFirstName()+""+user.getLastName();
     }
+    //uc4
+    public Greeting saveMessage(Greeting greeting){
+        Greeting newGreeting=new Greeting(String.format(template,greeting.getContent()));
+        repository.save(newGreeting);
+        return newGreeting;
+    }
 }
