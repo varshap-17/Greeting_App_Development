@@ -3,6 +3,8 @@ package com.example.greetingappdevelopment.controller;
 import com.example.greetingappdevelopment.model.Greeting;
 import com.example.greetingappdevelopment.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,5 +31,15 @@ public class GreetingController {
     @PutMapping("/putgreeting/{counter}")
     public Greeting sayhello(@PathVariable int counter,@RequestParam(value="content") String content){
         return new Greeting(counter,String.format(template,content));
+    }
+    //uc2
+    @GetMapping("/getMessage")
+    public ResponseEntity<String> getMessage(){
+        return new ResponseEntity<>(greetingService.getMessage(), HttpStatus.OK);
+    }
+    //uc3
+    @PutMapping("/greetingmsg")
+    public ResponseEntity<String> getgreetMessage(){
+        return new ResponseEntity<>(greetingService.getMessage(), HttpStatus.OK);
     }
 }
