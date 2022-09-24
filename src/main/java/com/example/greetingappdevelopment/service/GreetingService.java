@@ -35,4 +35,8 @@ public class GreetingService {
         Greeting ge=repository.getReferenceById(id);
         return ge.getContent();
     }
+    //uc6
+    public List<Greeting> getAllData(){
+        return repository.findAll();
+    }
 }
