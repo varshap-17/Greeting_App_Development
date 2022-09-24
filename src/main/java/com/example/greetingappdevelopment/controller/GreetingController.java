@@ -64,5 +64,9 @@ public class GreetingController {
     public Greeting editbyid(@PathVariable Integer id,@RequestParam String content){
         return greetingService.editdata(editbyid(id,content));
     }
-
+    //uc8
+    @DeleteMapping("/delete{id}")
+    public List<Greeting> deletebyid(@PathVariable Integer id){
+        return greetingService.deleteGreetingById(id);
+    }
 }
