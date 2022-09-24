@@ -44,4 +44,10 @@ public class GreetingService {
         repository.save(greeting);
         return greeting;
     }
+    //uc8
+    public List<Greeting> deleteGreetingById(Integer id) {
+        Greeting message  = repository.getReferenceById(id);
+        repository.delete(message);
+        return null;
+    }
 }
