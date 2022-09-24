@@ -43,4 +43,9 @@ public class GreetingController {
     public ResponseEntity<String> getgreetMessage(){
         return new ResponseEntity<>(greetingService.getMessage(), HttpStatus.OK);
     }
+    //uc4
+    @GetMapping("/save")
+    public ResponseEntity<Greeting> savemsg(){
+        return new ResponseEntity<>(greetingService.saveMessage(new Greeting()), HttpStatus.OK);
+    }
 }
