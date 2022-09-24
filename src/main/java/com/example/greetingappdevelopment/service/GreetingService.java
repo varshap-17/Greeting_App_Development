@@ -39,4 +39,9 @@ public class GreetingService {
     public List<Greeting> getAllData(){
         return repository.findAll();
     }
+    //uc7
+    public Greeting editdata(Greeting greeting) {
+        repository.save(greeting);
+        return greeting;
+    }
 }
